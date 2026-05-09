@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>YUM CHA 饮茶 USJ 11 | Kopitiam in Subang Jaya</title>
-  <meta name="description" content="YUM CHA 饮茶 USJ 11，本地茶餐室，位于 USJ 11/3J, Subang Jaya。提供 kopi、teh、早餐、本地餐食，欢迎堂食与自取。" />
+  <meta name="description" content="YUM CHA 饮茶 USJ 11，本地茶餐室，位于 USJ 11/3J, Subang Jaya。提供 kopi、teh、早餐、本地餐食、饮料与啤酒选择，欢迎堂食与自取。" />
 
   <meta property="og:title" content="YUM CHA 饮茶 USJ 11" />
   <meta property="og:description" content="各位，饮咗茶未啊？得空就来 yum cha！📍USJ 11/3J, Subang Jaya" />
@@ -16,17 +16,10 @@
       font-family: "Smiley Sans";
       src: local("Smiley Sans"),
            local("SmileySans-Oblique"),
-           url("./fonts/SmileySans-Oblique.woff2") format("woff2");
+           url("./SmileySans-Oblique.otf.woff2") format("woff2");
       font-weight: 400;
       font-style: normal;
       font-display: swap;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Smiley Sans", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
     }
 
     :root {
@@ -38,6 +31,14 @@
       --wine: #7b1e2b;
       --tea: #f6d7a7;
       --white: #ffffff;
+      --emoji-font: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Smiley Sans", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
     }
 
     body {
@@ -48,6 +49,12 @@
 
     a {
       color: inherit;
+    }
+
+    .emoji {
+      font-family: var(--emoji-font);
+      font-style: normal;
+      line-height: 1;
     }
 
     .page {
@@ -68,11 +75,11 @@
 
     .hero-card {
       width: 100%;
-      max-width: 920px;
+      max-width: 980px;
       background: rgba(255, 250, 242, 0.94);
       border: 1px solid rgba(255, 255, 255, 0.65);
       border-radius: 34px;
-      padding: 34px 24px;
+      padding: 36px 24px;
       text-align: center;
       box-shadow: 0 22px 60px rgba(74, 42, 22, 0.22);
       position: relative;
@@ -115,7 +122,7 @@
     }
 
     .subtitle {
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto;
       font-size: 18px;
       color: #5d4738;
@@ -158,7 +165,7 @@
 
     .quick-info {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
       gap: 14px;
       margin-top: 30px;
       text-align: left;
@@ -188,7 +195,7 @@
 
     .container {
       width: 100%;
-      max-width: 1040px;
+      max-width: 1120px;
       margin: 0 auto;
     }
 
@@ -201,40 +208,67 @@
 
     .section-subtitle {
       text-align: center;
-      max-width: 640px;
-      margin: 0 auto 28px;
+      max-width: 720px;
+      margin: 0 auto 30px;
       color: #6e5546;
       font-size: 17px;
     }
 
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
     }
 
-    .menu-item {
+    .menu-category {
       background: white;
-      border-radius: 24px;
-      padding: 22px;
+      border-radius: 26px;
+      overflow: hidden;
       box-shadow: 0 10px 28px rgba(74, 42, 22, 0.08);
-      border: 1px solid rgba(246, 215, 167, 0.75);
+      border: 1px solid rgba(246, 215, 167, 0.9);
     }
 
-    .menu-item .emoji {
-      font-size: 34px;
-      margin-bottom: 10px;
-    }
-
-    .menu-item h3 {
+    .menu-category-title {
+      background: var(--wine);
+      color: var(--cream);
+      padding: 14px 18px;
       font-size: 22px;
-      color: var(--wine);
-      margin-bottom: 8px;
     }
 
-    .menu-item p {
+    .menu-list {
+      list-style: none;
+    }
+
+    .menu-list li {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 11px 18px;
+      border-bottom: 1px solid rgba(246, 215, 167, 0.55);
+      font-size: 16px;
+    }
+
+    .menu-list li:nth-child(even) {
+      background: #fff6e8;
+    }
+
+    .menu-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .menu-list .cn {
+      color: var(--coffee);
+    }
+
+    .menu-list .en {
+      color: #6e5546;
+    }
+
+    .menu-note {
+      text-align: center;
+      margin-top: 24px;
+      color: #7b604f;
       font-size: 15px;
-      color: #5d4738;
     }
 
     .notice {
@@ -243,7 +277,7 @@
       text-align: center;
       border-radius: 28px;
       padding: 30px 20px;
-      margin-top: 22px;
+      margin-top: 28px;
     }
 
     .notice h2 {
@@ -295,6 +329,11 @@
         font-size: 72px;
         top: -18px;
       }
+
+      .menu-list li {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
     }
   </style>
 </head>
@@ -305,13 +344,13 @@
       <div class="hero-card">
         <div class="badge">USJ 11 Kopitiam · Subang Jaya</div>
 
-        <h1>YUM CHA 饮茶 USJ 11 ☕🍜</h1>
+        <h1>YUM CHA 饮茶 USJ 11 <span class="emoji">☕🍜</span></h1>
 
         <p class="tagline">各位，饮咗茶未啊？得空就来 yum cha！</p>
 
         <p class="subtitle">
-          本地茶餐室，提供 kopi、teh、早餐与本地餐食。欢迎堂食与自取。<br />
-          Local kopitiam serving coffee, tea, breakfast and local favourites.
+          本地茶餐室，提供 kopi、teh、早餐、本地餐食与饮料选择。欢迎堂食与自取。<br />
+          Local kopitiam serving coffee, tea, breakfast, local favourites and drinks.
         </p>
 
         <div class="actions">
@@ -326,17 +365,17 @@
 
         <div class="quick-info">
           <div class="info-box">
-            <h2>📍 Address 地址</h2>
+            <h2><span class="emoji">📍</span> Address 地址</h2>
             <p>2, Jalan USJ 11/3J, USJ 11, 47620 Subang Jaya, Selangor</p>
           </div>
 
           <div class="info-box">
-            <h2>🕒 Opening Hours 营业时间</h2>
+            <h2><span class="emoji">🕒</span> Opening Hours 营业时间</h2>
             <p>Daily 每天: 6:30 AM – 11:00 PM</p>
           </div>
 
           <div class="info-box">
-            <h2>🥡 Dine-in & Takeaway</h2>
+            <h2><span class="emoji">🥡</span> Dine-in & Takeaway</h2>
             <p>欢迎堂食与自取。For takeaway order, kindly WhatsApp us.</p>
           </div>
         </div>
@@ -346,36 +385,84 @@
     <main>
       <section>
         <div class="container">
-          <h2 class="section-title">Menu Highlights 推荐</h2>
+          <h2 class="section-title">Menu 菜单</h2>
           <p class="section-subtitle">
-            Kopi、teh、早餐、本地餐食，简单又满足。更多每日餐食欢迎到店或 WhatsApp 查询。
+            饮品、茶餐室小食与啤酒选择。价格以店内菜单为准。<br />
+            Drinks, kopitiam bites and beer selections. Please refer to our in-store menu for prices.
           </p>
 
           <div class="menu-grid">
-            <div class="menu-item">
-              <div class="emoji">☕</div>
-              <h3>Kopi 咖啡</h3>
-              <p>Traditional kopitiam coffee, available hot or iced.</p>
+            <div class="menu-category">
+              <h3 class="menu-category-title">咖啡・茶｜Kopi & Teh</h3>
+              <ul class="menu-list">
+                <li><span class="cn">黑咖啡</span><span class="en">Kopi O</span></li>
+                <li><span class="cn">淡奶咖啡</span><span class="en">Kopi C</span></li>
+                <li><span class="cn">奶咖啡</span><span class="en">Kopi</span></li>
+                <li><span class="cn">红茶</span><span class="en">Teh O</span></li>
+                <li><span class="cn">淡奶红茶</span><span class="en">Teh C</span></li>
+                <li><span class="cn">奶茶</span><span class="en">Teh</span></li>
+                <li><span class="cn">美禄</span><span class="en">Milo</span></li>
+              </ul>
             </div>
 
-            <div class="menu-item">
-              <div class="emoji">🥛</div>
-              <h3>Teh 奶茶</h3>
-              <p>Classic milk tea, smooth and comforting.</p>
+            <div class="menu-category">
+              <h3 class="menu-category-title">鸳鸯・咖啡｜Cham & Coffee</h3>
+              <ul class="menu-list">
+                <li><span class="cn">鸳鸯黑</span><span class="en">Cham O</span></li>
+                <li><span class="cn">鸳鸯淡奶</span><span class="en">Cham C</span></li>
+                <li><span class="cn">鸳鸯</span><span class="en">Cham</span></li>
+                <li><span class="cn">白咖啡</span><span class="en">White Coffee</span></li>
+                <li><span class="cn">雀巢黑咖啡</span><span class="en">Nescafé O</span></li>
+                <li><span class="cn">雀巢淡奶咖啡</span><span class="en">Nescafé C</span></li>
+                <li><span class="cn">雀巢奶咖啡</span><span class="en">Nescafé</span></li>
+              </ul>
             </div>
 
-            <div class="menu-item">
-              <div class="emoji">🍞</div>
-              <h3>Breakfast 早餐</h3>
-              <p>Start your day with simple kopitiam favourites.</p>
+            <div class="menu-category">
+              <h3 class="menu-category-title">其他饮料｜Other Drinks</h3>
+              <ul class="menu-list">
+                <li><span class="cn">柠檬红茶</span><span class="en">Teh O Limau</span></li>
+                <li><span class="cn">虎咬狮</span><span class="en">Hor Ka Sai</span></li>
+                <li><span class="cn">三色奶茶</span><span class="en">3 Layer Milk Tea</span></li>
+                <li><span class="cn">冰柠檬茶</span><span class="en">Ice Lemon Tea</span></li>
+                <li><span class="cn">酸柑冰</span><span class="en">Limau Ice</span></li>
+                <li><span class="cn">凉茶</span><span class="en">Herbal Tea</span></li>
+                <li><span class="cn">豆水</span><span class="en">Soya</span></li>
+              </ul>
             </div>
 
-            <div class="menu-item">
-              <div class="emoji">🍜</div>
-              <h3>Local Meals 本地餐食</h3>
-              <p>Daily food selections available in-store.</p>
+            <div class="menu-category">
+              <h3 class="menu-category-title">补充饮料｜Additional Drinks</h3>
+              <ul class="menu-list">
+                <li><span class="cn">蜂蜜柠檬</span><span class="en">Honey Lemon</span></li>
+                <li><span class="cn">柠檬水</span><span class="en">Lemonade</span></li>
+                <li><span class="cn">罐装饮料</span><span class="en">Can Drinks</span></li>
+                <li><span class="cn">中国茶</span><span class="en">Chinese Tea</span></li>
+                <li><span class="cn">矿泉水 1.5L</span><span class="en">Mineral Water 1.5L</span></li>
+                <li><span class="cn">咖椰烤面包</span><span class="en">Kaya Toast</span></li>
+                <li><span class="cn">半生熟蛋・2粒</span><span class="en">Half-Boiled Egg (2pcs)</span></li>
+              </ul>
+            </div>
+
+            <div class="menu-category">
+              <h3 class="menu-category-title">啤酒｜Beer</h3>
+              <ul class="menu-list">
+                <li><span class="cn">虎牌啤酒</span><span class="en">Tiger · Singapore</span></li>
+                <li><span class="cn">生力啤酒</span><span class="en">Anchor · Malaysia</span></li>
+                <li><span class="cn">嘉士伯</span><span class="en">Carlsberg · Denmark</span></li>
+                <li><span class="cn">喜力啤酒</span><span class="en">Heineken · Holland</span></li>
+                <li><span class="cn">健力士黑啤</span><span class="en">Guinness · Ireland</span></li>
+                <li><span class="cn">康纳黑啤</span><span class="en">Connor’s · Malaysia</span></li>
+                <li><span class="cn">胜狮啤酒</span><span class="en">Singha · Thailand</span></li>
+                <li><span class="cn">象牌啤酒</span><span class="en">Chang · Thailand</span></li>
+              </ul>
             </div>
           </div>
+
+          <p class="menu-note">
+            菜单供应视当日情况而定｜Menu availability may vary daily.<br />
+            啤酒仅限 18 岁以上｜Beer is for 18+ only. Don’t drink & drive.
+          </p>
 
           <div class="notice">
             <h2>得空就来 yum cha!</h2>
@@ -390,9 +477,9 @@
             <h2 class="section-title">Visit Us 来找我们</h2>
 
             <p><strong>YUM CHA 饮茶 USJ 11</strong></p>
-            <p>📍 2, Jalan USJ 11/3J, USJ 11, 47620 Subang Jaya, Selangor</p>
-            <p>☕ Near 7-Eleven USJ 11</p>
-            <p>📱 WhatsApp: +60 14-227 8286</p>
+            <p><span class="emoji">📍</span> 2, Jalan USJ 11/3J, USJ 11, 47620 Subang Jaya, Selangor</p>
+            <p><span class="emoji">☕</span> Near 7-Eleven USJ 11</p>
+            <p><span class="emoji">📱</span> WhatsApp: +60 14-227 8286</p>
 
             <div class="actions">
               <a class="btn btn-whatsapp" href="https://wa.me/60142278286" target="_blank" rel="noopener">
