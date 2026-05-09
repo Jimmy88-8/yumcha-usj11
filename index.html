@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>YUM CHA 饮茶 USJ 11 | Kopitiam in Subang Jaya</title>
+  <meta name="description" content="YUM CHA 饮茶 USJ 11，本地茶餐室，位于 USJ 11/3J, Subang Jaya。提供 kopi、teh、早餐、本地餐食，欢迎堂食与自取。" />
+
+  <meta property="og:title" content="YUM CHA 饮茶 USJ 11" />
+  <meta property="og:description" content="各位，饮咗茶未啊？得空就来 yum cha！📍USJ 11/3J, Subang Jaya" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    @font-face {
+      font-family: "Smiley Sans";
+      src: local("Smiley Sans"),
+           local("SmileySans-Oblique"),
+           url("./fonts/SmileySans-Oblique.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Smiley Sans", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    :root {
+      --orange: #f28c28;
+      --cream: #fff7ea;
+      --light-cream: #fffaf2;
+      --coffee: #4a2a16;
+      --brown: #6b3516;
+      --wine: #7b1e2b;
+      --tea: #f6d7a7;
+      --white: #ffffff;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--coffee);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 18px;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.55), transparent 34%),
+        linear-gradient(135deg, #fff3df 0%, #ffd89b 52%, #f28c28 75%, #7b1e2b 100%);
+    }
+
+    .hero-card {
+      width: 100%;
+      max-width: 920px;
+      background: rgba(255, 250, 242, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: 34px;
+      padding: 34px 24px;
+      text-align: center;
+      box-shadow: 0 22px 60px rgba(74, 42, 22, 0.22);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "饮茶";
+      position: absolute;
+      right: -18px;
+      top: -34px;
+      font-size: 110px;
+      color: rgba(123, 30, 43, 0.08);
+      transform: rotate(-10deg);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--wine);
+      color: var(--cream);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 72px);
+      line-height: 1.05;
+      color: var(--coffee);
+      margin-bottom: 12px;
+    }
+
+    .tagline {
+      font-size: clamp(21px, 4vw, 34px);
+      color: var(--wine);
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: #5d4738;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 28px 0 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 170px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(74, 42, 22, 0.18);
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+    }
+
+    .btn-map {
+      background: var(--wine);
+      color: white;
+    }
+
+    .quick-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .info-box {
+      background: var(--light-cream);
+      border: 1px solid #e9b7a5;
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .info-box h2 {
+      font-size: 18px;
+      color: var(--wine);
+      margin-bottom: 6px;
+    }
+
+    .info-box p {
+      font-size: 15px;
+      color: #4b382c;
+    }
+
+    section {
+      padding: 58px 18px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(30px, 5vw, 48px);
+      color: var(--coffee);
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 28px;
+      color: #6e5546;
+      font-size: 17px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    .menu-item {
+      background: white;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 10px 28px rgba(74, 42, 22, 0.08);
+      border: 1px solid rgba(246, 215, 167, 0.75);
+    }
+
+    .menu-item .emoji {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .menu-item h3 {
+      font-size: 22px;
+      color: var(--wine);
+      margin-bottom: 8px;
+    }
+
+    .menu-item p {
+      font-size: 15px;
+      color: #5d4738;
+    }
+
+    .notice {
+      background: var(--wine);
+      color: var(--cream);
+      text-align: center;
+      border-radius: 28px;
+      padding: 30px 20px;
+      margin-top: 22px;
+    }
+
+    .notice h2 {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .notice p {
+      font-size: 17px;
+      opacity: 0.96;
+    }
+
+    .contact {
+      background: #fff0db;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 30px;
+      padding: 28px 22px;
+      text-align: center;
+      box-shadow: 0 12px 34px rgba(74, 42, 22, 0.1);
+    }
+
+    .contact-card p {
+      margin: 8px 0;
+      color: #5d4738;
+    }
+
+    footer {
+      text-align: center;
+      padding: 26px 18px 34px;
+      color: #7b604f;
+      font-size: 14px;
+      background: var(--cream);
+    }
+
+    @media (max-width: 520px) {
+      .hero-card {
+        padding: 28px 18px;
+        border-radius: 28px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-card::before {
+        font-size: 72px;
+        top: -18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-card">
+        <div class="badge">USJ 11 Kopitiam · Subang Jaya</div>
+
+        <h1>YUM CHA 饮茶 USJ 11 ☕🍜</h1>
+
+        <p class="tagline">各位，饮咗茶未啊？得空就来 yum cha！</p>
+
+        <p class="subtitle">
+          本地茶餐室，提供 kopi、teh、早餐与本地餐食。欢迎堂食与自取。<br />
+          Local kopitiam serving coffee, tea, breakfast and local favourites.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-whatsapp" href="https://wa.me/60142278286" target="_blank" rel="noopener">
+            WhatsApp Us
+          </a>
+
+          <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=2%2C%20Jalan%20USJ%2011%2F3J%2C%20USJ%2011%2C%2047620%20Subang%20Jaya%2C%20Selangor" target="_blank" rel="noopener">
+            Get Directions
+          </a>
+        </div>
+
+        <div class="quick-info">
+          <div class="info-box">
+            <h2>📍 Address 地址</h2>
+            <p>2, Jalan USJ 11/3J, USJ 11, 47620 Subang Jaya, Selangor</p>
+          </div>
+
+          <div class="info-box">
+            <h2>🕒 Opening Hours 营业时间</h2>
+            <p>Daily 每天: 6:30 AM – 11:00 PM</p>
+          </div>
+
+          <div class="info-box">
+            <h2>🥡 Dine-in & Takeaway</h2>
+            <p>欢迎堂食与自取。For takeaway order, kindly WhatsApp us.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="container">
+          <h2 class="section-title">Menu Highlights 推荐</h2>
+          <p class="section-subtitle">
+            Kopi、teh、早餐、本地餐食，简单又满足。更多每日餐食欢迎到店或 WhatsApp 查询。
+          </p>
+
+          <div class="menu-grid">
+            <div class="menu-item">
+              <div class="emoji">☕</div>
+              <h3>Kopi 咖啡</h3>
+              <p>Traditional kopitiam coffee, available hot or iced.</p>
+            </div>
+
+            <div class="menu-item">
+              <div class="emoji">🥛</div>
+              <h3>Teh 奶茶</h3>
+              <p>Classic milk tea, smooth and comforting.</p>
+            </div>
+
+            <div class="menu-item">
+              <div class="emoji">🍞</div>
+              <h3>Breakfast 早餐</h3>
+              <p>Start your day with simple kopitiam favourites.</p>
+            </div>
+
+            <div class="menu-item">
+              <div class="emoji">🍜</div>
+              <h3>Local Meals 本地餐食</h3>
+              <p>Daily food selections available in-store.</p>
+            </div>
+          </div>
+
+          <div class="notice">
+            <h2>得空就来 yum cha!</h2>
+            <p>Kopi、teh、makan，USJ 11 等你来。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact">
+        <div class="container">
+          <div class="contact-card">
+            <h2 class="section-title">Visit Us 来找我们</h2>
+
+            <p><strong>YUM CHA 饮茶 USJ 11</strong></p>
+            <p>📍 2, Jalan USJ 11/3J, USJ 11, 47620 Subang Jaya, Selangor</p>
+            <p>☕ Near 7-Eleven USJ 11</p>
+            <p>📱 WhatsApp: +60 14-227 8286</p>
+
+            <div class="actions">
+              <a class="btn btn-whatsapp" href="https://wa.me/60142278286" target="_blank" rel="noopener">
+                Message on WhatsApp
+              </a>
+
+              <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=2%2C%20Jalan%20USJ%2011%2F3J%2C%20USJ%2011%2C%2047620%20Subang%20Jaya%2C%20Selangor" target="_blank" rel="noopener">
+                Open Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © YUM CHA 饮茶 USJ 11. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
